@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/32443358/README.md)
 # 🚀 GitHub Session
 
 Git과 GitHub의 기본 사용법을 실습합니다.
