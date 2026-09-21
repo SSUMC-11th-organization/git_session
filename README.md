@@ -407,3 +407,11 @@ compare : 닉네임/#이슈번호
 Code Review와 Approve를 확인한 뒤 PR을 Merge합니다.
 
 Merge가 완료되면 작업에 사용한 Branch를 삭제합니다. 개인 Main Branch는 삭제하지 않습니다.
+
+---
+
+## 📚 참고 자료
+
+본 세션 자료는 코딩애플의 Git 기초 영상들을 참고하여 제작했습니다.
+
+- [코딩애플 - Git 기초 영상](https://www.youtube.com/watch?v=sly2u8BIi9E)
