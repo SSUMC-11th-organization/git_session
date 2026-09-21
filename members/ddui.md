@@ -7,7 +7,7 @@
 - PE-Web
 
 ## 🏫 학과
-- 컴퓨터학부
+- 컴퓨터학부 asdasdas
 
 ## 🧠 MBTI
 - ISTP
