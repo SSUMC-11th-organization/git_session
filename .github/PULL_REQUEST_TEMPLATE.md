@@ -16,7 +16,7 @@
 <!-- PR을 작성하며 확인한 항목에 체크해주세요. -->
 - [ ] base가 `닉네임/main`, compare가 `닉네임/#이슈번호`인지 확인했습니다.
 - [ ] 관련 Issue를 연결했습니다.
-- [ ] Reviewer, Assignee, Label을 설정했습니다.
+- [ ] Reviewer와 Assignee를 설정하고 `git-session` Label을 선택했습니다.
 - [ ] PR 생성 후 Files changed에서 변경 내용을 확인하겠습니다.
 - [ ] Code Review와 Approve를 확인한 후 Merge하겠습니다.
 - [ ] Merge 후 이번 작업 브랜치를 삭제하겠습니다.
