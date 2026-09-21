@@ -1,10 +1,10 @@
-# 🚀 GitHub Session
+# 🚀 Git Session
 
 Git과 GitHub의 기본 사용법을 실습합니다.
 
 ---
 
-## ⚙️ 1. Git 최초 설정
+## Git 최초 설정
 
 Git을 처음 설치했다면 이름과 이메일을 설정합니다.
 
@@ -23,7 +23,7 @@ git config --global --list
 
 # 💻 1부. Local Git
 
-## 🌱 2. Git 시작하기
+## Git 시작하기
 
 실습할 폴더를 만들고 VS Code로 엽니다.
 
@@ -44,7 +44,7 @@ git status
 
 ---
 
-## ➕ 3. 파일 추가 및 Commit
+## 파일 추가 및 Commit
 
 파일을 만들거나 수정한 뒤 Staging Area에 추가합니다.
 
@@ -67,22 +67,32 @@ git commit -m "커밋 메시지"
 기본 흐름:
 
 ```text
-Working Directory
-        ↓ git add
-Staging Area
-        ↓ git commit
-Local Repository
+Working Directory (파일을 만들고 수정하는 공간)
+
+        │
+        │  git add
+        ▼
+
+Staging Area (Commit할 변경 사항을 준비하는 공간)
+
+        │
+        │  git commit
+        ▼
+
+Local Repository (Commit이 저장되는 공간)
 ```
 
 ---
 
-## 🔍 4. Commit 기록 확인
+## Commit 기록 확인
 
 ```bash
 git log --all --oneline
 ```
 
-브랜치 구조까지 확인하려면:
+Commit을 몇 개 만든 뒤 실행하여 Commit ID와 메시지를 확인합니다.
+
+Branch 구조까지 확인하려면:
 
 ```bash
 git log --all --oneline --graph
@@ -90,7 +100,7 @@ git log --all --oneline --graph
 
 ---
 
-## 📝 5. 변경 내용 확인
+## 변경 내용 확인
 
 아직 `git add`하지 않은 변경 내용을 확인합니다.
 
@@ -104,11 +114,9 @@ git diff
 git diff --staged
 ```
 
-VS Code의 **Git Graph** 확장 프로그램을 사용하면 Commit과 Branch 흐름을 시각적으로 확인할 수 있습니다.
-
 ---
 
-## 🖥️ 6. VS Code Source Control
+## VS Code Source Control
 
 VS Code 왼쪽의 **Source Control** 메뉴에서도 Git을 사용할 수 있습니다.
 
@@ -118,7 +126,7 @@ VS Code 왼쪽의 **Source Control** 메뉴에서도 Git을 사용할 수 있습
 
 ---
 
-## 🌿 7. Branch 만들기
+## Branch 만들기
 
 브랜치 생성:
 
@@ -140,7 +148,7 @@ git branch
 
 ---
 
-## 🔀 8. Merge
+## Merge
 
 합칠 기준 브랜치로 이동합니다.
 
@@ -163,7 +171,7 @@ git commit
 
 ---
 
-## ↩️ 9. 되돌리기
+## 되돌리기
 
 ### 파일 수정 취소
 
@@ -203,11 +211,23 @@ git revert <커밋ID>
 
 ---
 
-# :octocat: 2부. GitHub
+# 🐙 2부. GitHub
 
-## ⬆️ 10. Local Repository를 GitHub에 Push
+## Local Repository를 GitHub에 Push
 
 GitHub에서 새 Repository를 만듭니다.
+
+현재 로컬 Branch 이름을 확인합니다.
+
+```bash
+git branch
+```
+
+현재 Branch 이름이 `main`이 아니라면 `main`으로 변경합니다.
+
+```bash
+git branch -M main
+```
 
 원격 저장소 주소를 직접 사용해서 Push할 수도 있습니다.
 
@@ -241,19 +261,7 @@ git push
 
 ---
 
-## 📥 11. Clone
-
-이미 GitHub에 존재하는 Repository를 처음 내 컴퓨터로 가져올 때 사용합니다.
-
-```bash
-git clone <원격저장소주소>
-```
-
-`git clone`을 하면 Git 저장소 정보와 `origin`도 함께 설정되므로 `git init`과 `git remote add origin`을 다시 할 필요가 없습니다.
-
----
-
-## 🔄 12. Pull
+## Pull
 
 원격 저장소에 내가 가지고 있지 않은 새로운 Commit이 있다면 바로 Push할 수 없습니다.
 
@@ -275,7 +283,19 @@ git push
 
 지금까지 배운 내용을 활용해 자기소개 파일을 추가하고 GitHub 협업 흐름을 실습합니다.
 
-## 📦 13. UMC Repository Clone
+## Clone
+
+이미 GitHub에 존재하는 Repository를 처음 내 컴퓨터로 가져올 때 사용합니다.
+
+```bash
+git clone <원격저장소주소>
+```
+
+`git clone`을 하면 Git 저장소 정보와 `origin`도 함께 설정되므로 `git init`과 `git remote add origin`을 다시 할 필요가 없습니다.
+
+---
+
+## UMC Repository Clone
 
 실습 Repository를 내 컴퓨터로 가져옵니다.
 
@@ -284,19 +304,21 @@ git clone https://github.com/SSUMC-11th-organization/git_session.git
 cd git_session
 ```
 
+Clone하면 현재 위치에 `git_session` 폴더가 생성됩니다. 이후 Git 명령어를 사용하기 위해 `cd git_session`으로 해당 폴더에 들어갑니다.
+
 ---
 
-## ✨ 14. Issue 만들기
+## Issue 만들기
 
 GitHub에서 **Git Session 실습** Issue 템플릿을 선택해 Issue를 생성합니다.
 
 - Assignee: 본인
-- Label: 실습에 맞는 Label 선택
+- Label: `git-session`이 적용됐는지 확인
 - 생성된 Issue 번호 확인
 
 ---
 
-## 🔄 15. 개인 Main Branch 최신화
+## 개인 Main Branch 최신화
 
 자신의 개인 Main Branch로 이동한 뒤 원격의 최신 내용을 가져옵니다.
 
@@ -307,7 +329,7 @@ git pull
 
 ---
 
-## 🌿 16. 작업 Branch 생성
+## 작업 Branch 생성
 
 개인 Main Branch를 기준으로 Issue 번호가 포함된 작업 Branch를 생성합니다.
 
@@ -320,7 +342,7 @@ git switch 닉네임/#이슈번호
 
 ---
 
-## 👋 17. 자기소개 파일 작성
+## 자기소개 파일 작성
 
 `members/example.md`의 형식을 참고해 `members/닉네임.md` 파일을 새로 만들고 자기소개를 작성합니다.
 
@@ -328,7 +350,7 @@ git switch 닉네임/#이슈번호
 
 ---
 
-## 💾 18. Add 및 Commit
+## Add 및 Commit
 
 변경 사항을 Staging Area에 추가합니다.
 
@@ -345,7 +367,7 @@ git commit -m "자기소개 추가"
 
 ---
 
-## ⬆️ 19. 작업 Branch Push
+## 작업 Branch Push
 
 작업 Branch를 처음 Push하면서 원격 Branch와 연결합니다.
 
@@ -355,7 +377,7 @@ git push -u origin 닉네임/#이슈번호
 
 ---
 
-## 🔀 20. Pull Request
+## Pull Request
 
 GitHub에서 Pull Request를 생성하고 PR 템플릿을 작성합니다.
 
@@ -367,12 +389,12 @@ compare : 닉네임/#이슈번호
 - 관련 Issue 연결
 - Reviewer 지정
 - Assignee에 본인 지정
-- Label 선택
+- `git-session` Label 선택
 - PR 생성 후 Files changed 확인
 
 ---
 
-## 👀 21. Code Review 및 Approve
+## Code Review 및 Approve
 
 다른 스터디원의 PR을 확인하고 간단한 Review를 남깁니다.
 
@@ -380,7 +402,7 @@ compare : 닉네임/#이슈번호
 
 ---
 
-## 🎉 22. Merge
+## Merge
 
 Code Review와 Approve를 확인한 뒤 PR을 Merge합니다.
 
